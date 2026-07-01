@@ -1,62 +1,49 @@
 # Engineering Assessment
 
-Welcome, candidate! This project contains **intentional issues** that mimic real‑world scenarios.
-Your task is to refactor, optimize, and fix these problems.
+## Overview
 
-## Objectives
+This repository contains my completed engineering assessment.
 
-### 💻 Frontend (React)
+## Improvements Completed
 
-1. **Memory Leak**  
-   - `Items.js` leaks memory if the component unmounts before fetch completes. Fix it.
+### Backend
 
-2. **Pagination & Search**  
-   - Implement paginated list with server‑side search (`q` param). Contribute to both client and server.
+- Refactored synchronous file operations to asynchronous (`fs/promises`)
+- Added server-side pagination
+- Added server-side search
+- Implemented caching for `/api/stats`
+- Improved error handling
 
-3. **Performance**  
-   - The list can grow large. Integrate **virtualization** (e.g., `react-window`) to keep UI smooth.
+### Frontend
 
-4. **UI/UX Polish(optional)**  
-   - Feel free to enhance styling, accessibility, and add loading/skeleton states.
+- Fixed React memory leak using `AbortController`
+- Added server-side search
+- Added pagination
+- Integrated list virtualization using `react-window`
+- Improved UI/UX
+- Enhanced loading state
 
-### 🔧 Backend (Node.js)
+## Tech Stack
 
-1. **Refactor blocking I/O**  
-   - `src/routes/items.js` uses `fs.readFileSync`. Replace with non‑blocking async operations.
+- React
+- Node.js
+- Express
+- react-window
 
-2. **Performance**  
-   - `GET /api/stats` recalculates stats on every request. Cache results, watch file changes, or introduce a smarter strategy.
+## Running
 
+### Backend
 
-## ⏰ Time Expectation
-
-- Estimated time to complete: **1–2 hours**.
-
-## 📤 Submission
-
-Once completed, submit one of the following:
-
-- **short video** recording your work.
-- **Github Link** where your assessment result were pushed.
-
----
-
-## Quick Start
-
-node version: 18.XX
 ```bash
-nvm install 18
-nvm use 18
-
-# Terminal 1
 cd backend
-npm install
-npm start
-
-# Terminal 2
-cd frontend
 npm install
 npm start
 ```
 
-> The frontend proxies `/api` requests to `http://localhost:4001`.
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm start
+```
